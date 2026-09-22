@@ -1,0 +1,4 @@
+/counterpart-v2.json
+  Access-Control-Allow-Origin: https://lottoforecast.visuallottoboard.com
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Cache-Control: public, max-age=31536000, immutable

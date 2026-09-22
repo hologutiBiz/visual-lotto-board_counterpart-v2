@@ -1,0 +1,455 @@
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --primary-blue: #2282c7;
+    --accent-green: #16a34a;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --highlight-bg: rgba(22, 130, 199, 0.15);
+    --highlight-border: #38bdf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: url("https://res.cloudinary.com/ddatfadov/image/upload/v1790118718/Lotto_shot_fe9ntd.webp");
+
+}
+
+/* Navbar Layout */
+.navbar {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-blue);
+}
+
+.brand-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-parent {
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.80rem;
+}
+.brand-title {
+    display: block;
+    color: #fff;
+    font-size: 0.90rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.brand-wrapper img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #fff;
+   text-transform: capitalize;
+   width:fit-content;
+   padding: 5px 10px;
+   margin: 10px auto;
+   font-size: 1.5rem;
+
+}
+
+/* Search Dashboard Header */
+.search-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #800080;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.search-container h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: var(--text-main);
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.search-box input {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    width: 160px;
+    text-align: center;
+}
+
+.search-box input:focus {
+    outline: 2px solid var(--primary-blue);
+    border-color: transparent;
+}
+
+.search-box button {
+    background-color: var(--accent-green);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-box button:hover {
+    background-color: #15803d;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Loading / Fallback States */
+.loading-wrapper {
+    text-align: center;
+    margin: 4rem 0;
+    color: var(--text-muted);
+}
+
+.spinner {
+    border: 3px solid var(--border-color);
+    border-top: 3px solid var(--primary-blue);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Data Tables Styling */
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 2em auto;
+    gap: 2em;
+}
+
+
+thead {
+    background-color: #ff0000;
+}
+.class-name-wrapper {
+   position: sticky;
+   top: 0;
+   color: #fff;
+   background-color: #ff0000;
+}
+th {
+    writing-mode: tb;
+    padding: 5px;
+    transform: rotate(-180deg);
+}
+
+tbody {
+    background-color: #ffff00;
+}
+
+
+td {
+padding: 5px;
+   text-align: center;
+   font-weight: 400;
+}
+.num-cell {
+    color: #fff;
+    font-weight: 700;
+    background-color: #800080;
+    text-align: center;
+}
+
+
+/* Targeted Search Highlight Class */
+tr.highlight-row td {
+    background-color: var(--highlight-bg) !important;
+    border-top: 1px solid var(--highlight-border);
+    border-bottom: 1px solid var(--highlight-border);
+    font-weight: 600;
+}
+
+tr.highlight-row .num-cell {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+}
+
+
+/* Footer */
+footer {
+   background: #2c2c2c;
+   color: white;
+   padding: 40px 30px 20px;
+   box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+.footer-content {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 40px;
+   margin-bottom: 30px;
+}
+
+.footer-section {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.footer-section h3 {
+   color: #2B8FCC;
+   font-size: 18px;
+   margin-bottom: 10px;
+   font-weight: 600;
+}
+
+.footer-section a {
+   color: #e0e0e0;
+   text-decoration: none;
+   transition: all 0.3s;
+   font-size: 15px;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+
+.footer-section a:hover {
+   color: #2B8FCC;
+   padding-left: 5px;
+}
+
+.qr-section {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.qr-code {
+   width: 150px;
+   height: 150px;
+   background: white;
+   border-radius: 10px;
+   padding: 10px;
+   margin-bottom: 15px;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+#counterpart_qrCode img {
+width: 100%;
+height: 100%;
+background-position: 0 0, 5px 5px;
+border-radius: 5px;
+}
+
+
+.qr-text {
+   font-size: 14px;
+   color: #e0e0e0;
+}
+
+.download-btn {
+   background: linear-gradient(135deg, #2B8FCC 0%, #1e6b9e 100%);
+   color: white;
+   padding: 12px 25px;
+   border-radius: 25px;
+   text-decoration: none;
+   display: inline-block;
+   margin-top: 10px;
+   transition: all 0.3s;
+   font-weight: 600;
+}
+
+.download-btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(43, 143, 204, 0.4);
+}
+
+.social-footer {
+   display: flex;
+   gap: 15px;
+   flex-wrap: wrap;
+}
+
+.social-footer .social-icon {
+   width: 40px;
+   height: 40px;
+   background: rgba(43, 143, 204, 0.2);
+}
+
+.social-footer .social-icon:hover {
+   background: #2B8FCC;
+   color: white;
+}
+.footer-section .social-footer a {
+   all: unset;  
+   padding: 10px !important;
+}
+
+.footer-bottom {
+   border-top: 1px solid rgba(255,255,255,0.1);
+   padding-top: 20px;
+   text-align: center;
+   color: #888;
+   font-size: 14px;
+}
+
+.footer-bottom p {
+   margin: 5px 0;
+}
+
+.footer-bottom a {
+   color: #2B8FCC;
+   text-decoration: none;
+}
+
+.footer-bottom a:hover {
+   text-decoration: underline;
+}
+
+@media screen and (max-width: 885px) {
+     /* h1 {
+      font-size: 0.9rem;
+   } */
+    .table-wrapper {
+        flex-direction: column;
+        gap: 2rem; 
+    }
+
+    
+   /* tbody {
+      font-size: normal;
+   } */
+
+   .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+   }
+   
+
+   .social-footer {
+      justify-content: center;
+      align-items: center;
+      gap: 1.9rem;
+   }
+
+   .footer-section a {
+      justify-content: center;
+   }
+
+    .social-icons {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+   }
+
+}
+
+/* Megapot in-article banner */
+.megapot-banner-wrapper {
+    text-align: center;
+    margin: 2rem auto;
+}
+.megapot-banner {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+.megapot-desktop-banner { display: none; }
+.megapot-mobile-banner { display: inline-block; width: 300px; }
+
+
+
+/* Megapot sticky mobile banner */
+.megapot-sticky-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 30px;
+}
+.megapot-sticky-banner img {
+    min-width: 320px;
+    max-width: 100%;
+    height: auto;
+}
+.megapot-close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+}
+
+@media screen and (min-width: 886px) {
+    .megapot-desktop-banner { 
+        display: inline-block; 
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 999;
+    }
+    .megapot-mobile-banner { display: none; }
+    .megapot-sticky-banner { display: none; }
+
+}
